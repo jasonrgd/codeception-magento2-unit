@@ -13,6 +13,7 @@
             "Codeception\\": "src"
         }
     },
+    "minimum-stability": "dev",
     "version": "0.0.1",
     "require": {
         "php": ">=7.0",
