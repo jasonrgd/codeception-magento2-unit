@@ -16,13 +16,18 @@ class Magento2 extends Module
     protected $config = ['path'];
 
     /**
+     * @var array
+     */
+    protected $requiredFields = ['path'];
+
+    /**
      * Undocumented function
      *
      * @return void
      */
     public function _initialize()
     {
-        $app = new Module\App();
+        $app = new Module\App($this->config['path']);
         $app->bootstrap();
     }
 
