@@ -18,11 +18,11 @@ class App {
 
     public function bootstrap()
     {
-        if (!$installationPath) {
+        if (!$this->installationPath) {
             return false;
         }
 
-        require_once $installationPath."app/bootstrap.php";
+        require_once $this->installationPath."app/bootstrap.php";
         return $this;
 
     }
