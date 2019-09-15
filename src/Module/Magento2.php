@@ -3,6 +3,8 @@
 namespace Codeception\Module;
 
 use Codeception\Module;
+use Codeception\Util;
+
 
 /**
  * 
@@ -27,7 +29,7 @@ class Magento2 extends Module
      */
     public function _initialize()
     {
-        $app = new Module\App($this->config['path']);
+        $app = new Util\App($this->config['path']);
         $app->bootstrap();
     }
 
