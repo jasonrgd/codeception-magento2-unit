@@ -2,14 +2,19 @@
 
 namespace Codeception\Module;
 
-use Codeception\Lib\Interfaces\PartedModule;
 use Codeception\Module;
 
 /**
  * 
  */
-class Magento2 extends Module implements PartedModule
+class Magento2 extends Module
 {
+
+    /**
+     * @var array
+     */
+    protected $config = ['path'];
+
     /**
      * Undocumented function
      *
@@ -17,7 +22,12 @@ class Magento2 extends Module implements PartedModule
      */
     public function _initialize()
     {
-        
+        $app = new Module\App();
+        $app->bootstrap();
+    }
+
+    public function getMagentoObjectManager(){
+        return Magento\Framework\TestFramework\Unit\Helper\ObjectManager::class;
     }
 }
 ?>
