@@ -5,9 +5,8 @@ namespace Codeception\Module;
 use Codeception\Module;
 use Codeception\Util;
 
-
 /**
- * 
+ *
  */
 class Magento2 extends Module
 {
@@ -23,19 +22,16 @@ class Magento2 extends Module
     protected $requiredFields = ['path'];
 
     /**
-     * Undocumented function
-     *
      * @return void
      */
-    public function _initialize()
+    public function _beforeSuite($settings = [])
     {
         $app = new Util\App($this->config['path']);
         $app->bootstrap();
-        $app = $bootstrap->createApplication('TestApp');
-        $bootstrap->run($app);
     }
 
-    public function getMagentoObjectManager(){
+    public function getMagentoObjectManager()
+    {
         return Magento\Framework\TestFramework\Unit\Helper\ObjectManager::class;
     }
 }
