@@ -31,6 +31,8 @@ class Magento2 extends Module
     {
         $app = new Util\App($this->config['path']);
         $app->bootstrap();
+        $app = $bootstrap->createApplication('TestApp');
+        $bootstrap->run($app);
     }
 
     public function getMagentoObjectManager(){
