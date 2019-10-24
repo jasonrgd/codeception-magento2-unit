@@ -30,9 +30,9 @@ class Magento2 extends Module
         $app->bootstrap();
     }
 
-    public function getMagentoObjectManager()
+    public function getMagentoObjectManager($object)
     {
-        return Magento\Framework\TestFramework\Unit\Helper\ObjectManager::class;
+        return new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($object);
     }
 }
 ?>
