@@ -22,7 +22,14 @@ class App {
             return false;
         }
 
-        require_once $this->installationPath."app/bootstrap.php";
+        \TYPO3\PharStreamWrapper\Manager::initialize(
+            (new \TYPO3\PharStreamWrapper\Behavior())
+                ->withAssertion(new \TYPO3\PharStreamWrapper\Interceptor\PharMetaDataInterceptor())
+        );
+
+        require_once $this->installationPath . "app/bootstrap.php";
+        stream_wrapper_register('phar', \TYPO3\PharStreamWrapper\PharStreamWrapper::class);
+
         return $this;
 
     }
