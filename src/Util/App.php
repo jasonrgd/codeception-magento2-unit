@@ -27,7 +27,7 @@ class App {
                 ->withAssertion(new \TYPO3\PharStreamWrapper\Interceptor\PharMetaDataInterceptor())
         );
 
-        require_once $this->installationPath . "app/dev/tests/unit/framework/bootstrap.php";
+        require_once $this->installationPath . "dev/tests/unit/framework/bootstrap.php";
         stream_wrapper_register('phar', \TYPO3\PharStreamWrapper\PharStreamWrapper::class);
 
         return $this;
