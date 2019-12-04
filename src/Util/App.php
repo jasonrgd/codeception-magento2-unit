@@ -23,15 +23,8 @@ class App
             return false;
         }
 
-        \TYPO3\PharStreamWrapper\Manager::initialize(
-            (new \TYPO3\PharStreamWrapper\Behavior())
-                ->withAssertion(new \TYPO3\PharStreamWrapper\Interceptor\PharMetaDataInterceptor())
-        );
-
         require_once $this->installationPath . "dev/tests/unit/framework/bootstrap.php";
-        if (array_search("phar", stream_get_wrappers()) === false) {
-            stream_wrapper_register('phar', \TYPO3\PharStreamWrapper\PharStreamWrapper::class);
-        }
+
         return $this;
 
     }
