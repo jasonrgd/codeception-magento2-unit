@@ -2,7 +2,8 @@
 
 namespace Codeception\Util;
 
-class App {
+class App 
+{
     
     /**
      * Path to Magento Folder
@@ -28,10 +29,10 @@ class App {
         );
 
         require_once $this->installationPath . "dev/tests/unit/framework/bootstrap.php";
-        stream_wrapper_register('phar', \TYPO3\PharStreamWrapper\PharStreamWrapper::class);
-
+        if (array_search("phar", stream_get_wrappers()) === false) {
+            stream_wrapper_register('phar', \TYPO3\PharStreamWrapper\PharStreamWrapper::class);
+        }
         return $this;
 
     }
-
 }
