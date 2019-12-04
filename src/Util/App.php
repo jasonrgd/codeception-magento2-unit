@@ -22,7 +22,7 @@ class App {
             return false;
         }
 
-        require_once $this->installationPath."app/bootstrap.php";
+        require_once $this->installationPath."app/dev/tests/unit/framework/bootstrap.php";
         return $this;
 
     }
