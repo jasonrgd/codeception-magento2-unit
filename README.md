@@ -1,6 +1,1 @@
-"codeception-magento2-unit": {
-      "type": "git",
-      "url": "/Users/jason.dsouza/Projects/jasonrgd/codeception-magento2-unit"
-    }
-
-        "jasonrgd/codeception-magento2-unit": "dev-master"
+# A Codeception module to run unit tests with Composer for Magento 2.3.1 Enterprise
